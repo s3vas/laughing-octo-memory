@@ -28,7 +28,7 @@ async function createCourse() {
 
 	console.log(result);
 }
-
+   
 async function getCourses() {
 
 	//Query Operators
