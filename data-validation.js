@@ -120,4 +120,3 @@ async function removeCourse(id) {
 
 createCourse();
 
-//test
