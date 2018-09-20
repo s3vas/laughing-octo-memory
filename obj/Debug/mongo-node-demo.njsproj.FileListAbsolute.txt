@@ -1,0 +1,3 @@
+C:\Users\dsev\Desktop\mongo-demo\obj\Debug\mongo-node-demo.njsprojAssemblyReference.cache
+C:\Users\dsev\Desktop\mongo-demo\obj\Debug\mongo-node-demo.njsproj.CoreCompileInputs.cache
+C:\Users\dsev\Desktop\mongo-demo\bin\Microsoft.NodejsTools.WebRole.dll
