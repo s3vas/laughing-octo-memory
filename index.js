@@ -122,3 +122,4 @@ async function removeCourse(id) {
 	console.log(result);
 }
 
+//test home
