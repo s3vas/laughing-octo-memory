@@ -6,7 +6,8 @@
     <ProjectGuid>{9f3a7c11-4f61-4c3a-a235-d46f00a1dfcc}</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <ProjectView>ProjectFiles</ProjectView>
-    <StartupFile>index.js</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
@@ -17,15 +18,42 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
-    <Content Include="exercise.txt" />
-    <Content Include="exercise-data.json" />
+    <Content Include="dummy-data\customers.json">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="insert-data.txt" />
+    <Content Include="dummy-data\courses.json" />
+    <Content Include="dummy-data\genres.json">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
-    <Content Include="crud.js" />
-    <Content Include="data-validation.js" />
-    <Content Include="index.js" />
+    <Content Include="exercise.js" />
+    <Content Include="validation.js" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="dummy-data\" />
+    <Folder Include="models\" />
+    <Folder Include="routes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="index.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="models\customer.js">
+      <SubType>Code</SubType>
+      <TestFramework>ExportRunner</TestFramework>
+    </Compile>
+    <Compile Include="models\genre.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="routes\customers.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="routes\genres.js">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
