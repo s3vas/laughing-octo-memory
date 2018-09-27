@@ -37,6 +37,7 @@
     <Folder Include="routes\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="embedding.js" />
     <Compile Include="index.js">
       <SubType>Code</SubType>
     </Compile>
@@ -47,12 +48,24 @@
     <Compile Include="models\genre.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="models\movie.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="models\rental.js" />
+    <Compile Include="objectid.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="population.js" />
     <Compile Include="routes\customers.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="routes\genres.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="routes\movies.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="routes\rentals.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
