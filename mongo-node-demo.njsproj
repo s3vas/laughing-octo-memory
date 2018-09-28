@@ -18,6 +18,9 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Content Include="config\default.json">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="dummy-data\customers.json">
       <SubType>Code</SubType>
     </Content>
@@ -34,10 +37,28 @@
   <ItemGroup>
     <Folder Include="dummy-data\" />
     <Folder Include="models\" />
+    <Folder Include="config\" />
+    <Folder Include="middleware\" />
     <Folder Include="routes\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="config\custom-environment-variables.json">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="embedding.js" />
+    <Compile Include="hash.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="index.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="middleware\admin.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="middleware\authorization.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="middleware\error.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="models\customer.js">
@@ -47,10 +68,31 @@
     <Compile Include="models\genre.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="models\movie.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="models\rental.js" />
+    <Compile Include="models\user.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="objectid.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="population.js" />
+    <Compile Include="routes\login.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="routes\customers.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="routes\genres.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="routes\movies.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="routes\rentals.js" />
+    <Compile Include="routes\register.js">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
