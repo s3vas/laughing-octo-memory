@@ -1,12 +1,14 @@
-﻿const express = require('express');
+﻿const authorization = require('../middleware/authorization')
+const admin = require('../middleware/admin')
+const express = require('express');
 const router = express.Router();
 const { Genre, validate } = require('../models/genre')
 
-
 router.get('/', async (req, res) => {
-	await Genre.find().sort('name').then(function (result) {
-		res.send(result);
-	});
+	throw new Error('Could not get the genres');
+
+	const genres = await Genre.find().sort('name')
+	res.send(genres);
 });
 
 router.get('/:id', async (req, res) => {
@@ -16,7 +18,7 @@ router.get('/:id', async (req, res) => {
 	res.send(genre);
 });
 
-router.post('/', async (req, res) => {
+router.post('/', authorization, async (req, res) => {
 	const { error } = validate(req.body);
 	if (error) return res.status(400).send(error.details[0].message);
 
@@ -25,7 +27,7 @@ router.post('/', async (req, res) => {
 	await genre.save();
 
 	res.send(genre);
-});
+}); //auth method will be called before the actual route handler
 
 router.put('/:id', async (req, res) => {
 	const { error } = validate(req.body);
@@ -40,7 +42,8 @@ router.put('/:id', async (req, res) => {
 	res.send(genre);
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', [authorization, admin], async (req, res) => {  //array of middleware functions.They will be called in sequence.
+
 	const genre = await Genre.findByIdAndRemove(req.params.id);
 
 	if (!genre) return res.status(404).send('The genre with the given ID was not found.');
